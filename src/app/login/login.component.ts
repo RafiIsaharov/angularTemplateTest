@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
+import { LoginValidationService } from '../services/login-validation.service';
 
 @Component({
     selector: 'app-login',
@@ -9,11 +10,33 @@ import { routerTransition } from '../router.animations';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-    constructor(public router: Router) {}
+    fullname : string;
+
+    constructor(public router: Router , private loginValidationService: LoginValidationService) {}
 
     ngOnInit() {}
 
     onLoggedin() {
-        localStorage.setItem('isLoggedin', 'true');
+        var validEmail : boolean;                
+        //var emailObj = <HTMLInputElement>document.getElementById("RgstrEmail");
+        //var email: string = emailObj.value;
+
+        var validPassword : boolean;
+
+
+        console.log("this is the email: " + this.loginValidationService.getRegistrationEmailAddress());
+
+        var email = this.loginValidationService.getRegistrationEmailAddress();
+        validEmail = this.loginValidationService.validateEmail(email);
+    
+        //validEmail = validateEmail(email);
+        validPassword = this.loginValidationService.validatePassword (this.loginValidationService.getRegistrationPassword());
+
+        if (validEmail && validPassword) {
+            localStorage.setItem('isLoggedin', 'true');
+        }
+        
+       
+
     }
 }

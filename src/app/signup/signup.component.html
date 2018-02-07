@@ -16,9 +16,17 @@
                     <div class="form-group">
                         <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
                     </div>
+
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Repeat Password">
-                    </div>
+                        <div class="radio">
+                                <label><input type="radio" id ="Wlt" name="optradio">Wallet</label>
+                                <label><input type="radio" id ="BankTrn" name="optradio">Bank Transfer</label>
+                                  </div>    
+                        
+                            
+                        </div>
+
+
                 </div>
                 <a class="btn rounded-btn" [routerLink]="['/dashboard']"> Register </a>&nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
