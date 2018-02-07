@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
@@ -37,7 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
         }),
         AppRoutingModule
     ],
-    declarations: [AppComponent, DeviceFormComponent],
+    declarations: [AppComponent],
     providers: [AuthGuard,LoginValidationService,DeviceManagementService],
     bootstrap: [AppComponent]
 })

@@ -3,12 +3,18 @@
     <form>
       <div class="form-group">
         <label for="name">Device name</label>
-        <input type="text" class="form-control" id="deviceName" required>
+        <input type="text" class="form-control" id="deviceNameId" [(ngModel)]="deviceName" name="DeviceName" required>
       </div>
 
       <div class="form-group">
-        <label for="Notification">Notification</label>
-        <input type="text" class="form-control" id="Notification">
+        <label for="Notification">Owner</label>
+        <input type="text" class="form-control" id="Owner" [(ngModel)]="deviceOwner" name="DeviceOwner">
+      </div>
+
+      <div class="form-group">
+          <label for="Authorization">Notification</label>
+          <input type="text" class="form-control" id="Not" [(ngModel)]="notification" name="Notification">
+
       </div>
 
       <div class="form-group">
@@ -26,7 +32,11 @@
               <input type="text" class="form-control" id="alterEgo">
         </div>
 
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
 
-    </form>
+    </form>    
+  
   </div>
+
+
+  
