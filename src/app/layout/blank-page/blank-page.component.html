@@ -24,9 +24,9 @@
     
     <button class="btn btn-outline-secondary" ngbDropdownToggle>Manage Device</button>
         <div ngbDropdownMenu>
-                <button class="dropdown-item">Add device</button>
-                <button class="dropdown-item">Remove device</button>
-                <button class="dropdown-item">Save</button>
+                <button class="dropdown-item" [routerLink]="['/device-form']" (click)="_deviceManagementService.addDevice()">Add device</button>
+                <button class="dropdown-item" (click)="_deviceManagementService.removeDevice()">Remove device</button>
+                <button class="dropdown-item" (click)="_deviceManagementService.save()">Save</button>
         </div>    
 
 </div>    

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DeviceComponent } from '../../device/device.component';
-import { CardListService } from '../../services/card-list.service';
+import { DeviceManagementService } from '../../device-management.service';
+
 
 @Component({
     selector: 'app-blank-page',
@@ -12,7 +13,7 @@ export class BlankPageComponent implements OnInit {
 
     public cardList : DeviceComponent [] = [];
 
-    constructor(private _cardListService : CardListService) {}
+    constructor(private _deviceManagementService :  DeviceManagementService) {}
 
     ngOnInit() {}
 }

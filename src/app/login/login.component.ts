@@ -17,20 +17,14 @@ export class LoginComponent implements OnInit {
     ngOnInit() {}
 
     onLoggedin() {
-        var validEmail : boolean;                
-        //var emailObj = <HTMLInputElement>document.getElementById("RgstrEmail");
-        //var email: string = emailObj.value;
-
-        var validPassword : boolean;
-
-
-        console.log("this is the email: " + this.loginValidationService.getRegistrationEmailAddress());
+        var validEmail : boolean;                       
+        var validPassword : boolean;        
 
         var email = this.loginValidationService.getRegistrationEmailAddress();
-        validEmail = this.loginValidationService.validateEmail(email);
-    
-        //validEmail = validateEmail(email);
-        validPassword = this.loginValidationService.validatePassword (this.loginValidationService.getRegistrationPassword());
+        var password = this.loginValidationService.getRegistrationPassword();
+        
+        validEmail = this.loginValidationService.validateEmail(email);         
+        validPassword = this.loginValidationService.validatePassword (password);
 
         if (validEmail && validPassword) {
             localStorage.setItem('isLoggedin', 'true');
